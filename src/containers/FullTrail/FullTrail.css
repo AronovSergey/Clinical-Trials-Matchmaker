@@ -1,0 +1,15 @@
+.FullTrail {
+    width: 90%;
+    margin: 20px auto;
+    border: 1px solid #eee;
+    box-shadow: 0 2px 3px #ccc;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-bottom: 16px;
+    padding-top: 16px;
+}
+
+.CenturiesText {
+	text-align: center;
+}
+

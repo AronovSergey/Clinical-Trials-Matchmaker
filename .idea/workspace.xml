@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="852231c7-aa0f-4561-bd7b-6c3f09f03dc3" name="Default Changelist" comment="" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1YIy080r43ZlnMv9uQ3fYjfcmqH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.jscs" value="true" />
+    <property name="node.js.detected.package.standard" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.jscs" value="project" />
+    <property name="node.js.path.for.package.standard" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.jscs" value="" />
+    <property name="node.js.selected.package.standard" value="" />
+    <property name="nodejs_interpreter_path" value="node" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
+    <property name="settings.editor.selected.configurable" value="project.propVCSSupport.Mappings" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/components" />
+    </key>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="852231c7-aa0f-4561-bd7b-6c3f09f03dc3" name="Default Changelist" comment="" />
+      <created>1575455333855</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1575455333855</updated>
+      <workItem from="1575455335942" duration="3013000" />
+      <workItem from="1575552980245" duration="10000" />
+      <workItem from="1575801463708" duration="9878000" />
+      <workItem from="1576157094147" duration="73000" />
+      <workItem from="1576159026586" duration="2629000" />
+      <workItem from="1576424338389" duration="17000" />
+      <workItem from="1576424402388" duration="946000" />
+      <workItem from="1576425435466" duration="558000" />
+      <workItem from="1576426063010" duration="10000" />
+      <workItem from="1576426092064" duration="610000" />
+      <workItem from="1576426920908" duration="1000" />
+      <workItem from="1576483194318" duration="784000" />
+      <workItem from="1576505222425" duration="3000" />
+      <workItem from="1582641249489" duration="1372000" />
+      <workItem from="1582644180201" duration="796000" />
+      <workItem from="1582649876225" duration="48000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="320" y="91" key="#JSHint" timestamp="1582649789535">
+      <screen x="0" y="23" width="1440" height="803" />
+    </state>
+    <state x="320" y="91" key="#JSHint/0.23.1440.803/1440.23.1920.1057@0.23.1440.803" timestamp="1582649789535" />
+    <state x="184" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1582649920626">
+      <screen x="0" y="23" width="1440" height="803" />
+    </state>
+    <state x="184" y="88" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1440.803/1440.23.1920.1057@0.23.1440.803" timestamp="1582649920626" />
+    <state x="221" y="63" key="SettingsEditor" timestamp="1582644573042">
+      <screen x="0" y="23" width="1440" height="803" />
+    </state>
+    <state x="221" y="63" key="SettingsEditor/0.23.1440.803/1440.23.1920.1057@0.23.1440.803" timestamp="1582644573042" />
+  </component>
+</project>

@@ -1,0 +1,5 @@
+.Results {
+    flex-flow: row wrap;
+    width: 80%;
+    margin: auto;
+}
