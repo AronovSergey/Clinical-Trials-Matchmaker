@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React    from 'react';
 import { Route, Redirect, Switch} from 'react-router-dom';
 import Paper from '@material-ui/core/Paper';
 
@@ -8,21 +8,19 @@ import FullTrail from './../../containers/FullTrail/FullTrail';
 import SearchResults from './../../containers/SearchResults/SearchResults';
 
 
-class Blog extends Component {
-    render() {
-        return (
-            <Paper>
-                <Switch>
-                    <Route path="/about-us" exact component={AboutUs}/>
-                    <Redirect from="/" exact to="/search"/>
-                    <Route path="/search" component={SearchEngine}/>
-                    <Route path="/results" component={SearchResults}/>
-                    <Route path="/trail/:id" exact component={FullTrail}/>
-                    <Route render={()=><h1>Not found</h1>}/>
-                </Switch>   
-            </Paper>
-        );
-    }
+const Blog = () => {
+    return (
+        <Paper>
+            <Switch>
+                <Route path="/about-us" exact component={AboutUs}/>
+                <Redirect from="/" exact to="/search"/>
+                <Route path="/search" component={SearchEngine}/>
+                <Route path="/results" component={SearchResults}/>
+                <Route path="/trail/:id" exact component={FullTrail}/>
+                <Route render={()=><h1>Not found</h1>}/>
+            </Switch>   
+        </Paper>
+    );
 }
 
 export default Blog;

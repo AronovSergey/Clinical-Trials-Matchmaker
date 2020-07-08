@@ -1,108 +1,111 @@
-import React, {Component} from 'react';
-import {connect} from 'react-redux';
-import { withRouter } from "react-router";
+import React, { useState } from 'react';
+import { useHistory } from "react-router";
+import { useDispatch } from 'react-redux';
+
 import HorizontalStepper from './../../components/HorizontalStepper/HorizontalStepper';
 import RedditTextField from './../../components/RedditTextField/RedditTextField';
 import GenderSelecter from './../../components/GenderSelecterTextField/GenderSelecterTextField';
 import Searchbar from './../../components/Searchbar/Searchbar';
 
-class SearchEngine extends Component {
-    state = {
-        name: null,
-        age: null,
-        gender: "Male",
-        searchExpression: null,
-        activeStep: 0
+import { updateSearchDetails, updateTrailsArr } from './../../store/reducer';
+
+const SearchEngine = props => {
+    const history = useHistory();
+    const dispatch = useDispatch();  
+
+    const [searchDetails, setSearchDetails] = useState({
+                                                    name: '',
+                                                    age: '',
+                                                    gender: "Male",
+                                                    searchExpression: ''
+                                                });
+
+    const { name, age, gender, searchExpression } = searchDetails;
+
+    const [activeStep, setActiveStep] = useState(0);
+
+    const handleInputChange = event => {
+        const { name, value } = event.target;
+        setSearchDetails((prevSearchDetails) => {
+            return {
+                ...prevSearchDetails,
+                [name] : value
+            }
+        });
     }
 
-    handleNameChange = (event) => {
-        this.setState({name: event.target.value});
+    const handleFinish = () => {
+        dispatch(updateSearchDetails(searchDetails));
+        dispatch(updateTrailsArr());
+        history.push('/results');
     };
 
-    handleAgeChange = (event) => {
-        this.setState({age: event.target.value});
+    const handleNext = () => {
+        setActiveStep(activeStep + 1);
     };
 
-    handleGenderChange = (gender) => {
-        this.setState({gender: gender});
+    const handleBack = () => {
+        setActiveStep(activeStep - 1);
     };
 
-    handleSearchExpressionChange = (expression) => {
-        this.setState({searchExpression: expression});
+    const child = () => {
+        switch (activeStep) {
+            case 0:
+                return <RedditTextField
+                            id="name"
+                            name="name"
+                            label="Name"
+                            value={name}
+                            variant="filled"
+                            onChange={handleInputChange}
+                            onKeyPress={ event => {
+                            if (event.key === 'Enter') {
+                                  handleNext();
+                                }
+                              }}
+                        />
+            case 1:
+                return <RedditTextField
+                            id="age"
+                            name="age"
+                            label="Age"
+                            value={age}
+                            type="number"
+                            InputLabelProps={{shrink: true,}}
+                            variant="filled"
+                            onChange={handleInputChange}
+                            onKeyPress={ event => {
+                                if (event.key === 'Enter') {
+                                  handleNext();
+                                }
+                              }}
+                        />
+            case 2:
+                return <GenderSelecter
+                            updateChange={handleInputChange}
+                            gender={gender}
+                            handleNext={handleNext}/>;
+            case 3:
+                return <Searchbar
+                            updateChange={handleInputChange}
+                            searchExpression={searchExpression}
+                            handleFinish={handleFinish}/>; 
+            default:
+                return <h1>Unknown stepIndex</h1>;
+        }
     };
 
-    handleFinish = () => {
-        this.props.updateStore(this.state);
-        this.props.history.push('/results');
-    };
-
-    handleNext = () => {
-        const step = this.state.activeStep + 1;
-        this.setState({activeStep: step});
-    };
-
-    handleBack = () => {
-        const step = this.state.activeStep - 1;
-        this.setState({activeStep: step});
-    };
-
-    render() {
-        const child = () => {
-            switch (this.state.activeStep) {
-                case 0:
-                    return <RedditTextField
-                                id="name"
-                                label="Name"
-                                variant="filled"
-                                onChange={this.handleNameChange}
-                                onKeyPress={ event => {
-                                    if (event.key === 'Enter') {
-                                      this.handleNext();
-                                    }
-                                  }}
-                            />
-                case 1:
-                    return <RedditTextField
-                                id="age"
-                                label="Age"
-                                type="number"
-                                InputLabelProps={{shrink: true,}}
-                                variant="filled"
-                                onChange={this.handleAgeChange}
-                                onKeyPress={ event => {
-                                    if (event.key === 'Enter') {
-                                      this.handleNext();
-                                    }
-                                  }}
-                            />
-                case 2:
-                    return <GenderSelecter
-                                updateChange={this.handleGenderChange}
-                                gender={this.state.gender}
-                                handleNext={this.handleNext}/>;
-                case 3:
-                    return <Searchbar
-                                updateChange={this.handleSearchExpressionChange}
-                                handleFinish={this.handleFinish}/>; 
-                default:
-                    return <h1>Unknown stepIndex</h1>;}}
-        return ( 
-            <HorizontalStepper
-                step={this.state.activeStep}
-                handleFinish={this.handleFinish} 
-                handleNext={this.handleNext}
-                handleBack={this.handleBack}
-                updateActiveComponent={this.updateActiveStep}
-                name={this.state.name}
-            >
-                {child()}
-            </HorizontalStepper>
-        );
-    }
+    return ( 
+        <HorizontalStepper
+            step={activeStep}
+            handleFinish={handleFinish} 
+            handleNext={handleNext}
+            handleBack={handleBack}
+            name={name}
+        >
+            {child()}
+        </HorizontalStepper>
+    );
 }
-const mapDispatchToProps = dispatch => {
-    return {
-        updateStore: (state) => dispatch({type: 'UPDATE_SEARCH_DATA', props: state}),
-    }
-}
-export default withRouter(connect(null, mapDispatchToProps)(SearchEngine));
+
+export default SearchEngine;

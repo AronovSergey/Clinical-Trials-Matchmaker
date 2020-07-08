@@ -9,8 +9,7 @@ import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    height: 300,
-    marginBottom: theme.spacing(12),
+    marginBottom: theme.spacing(6),
   },
 
 }));

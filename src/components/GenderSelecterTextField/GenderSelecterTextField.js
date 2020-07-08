@@ -19,19 +19,16 @@ const useStyles = makeStyles((theme) => ({
 export default function GenderSelecterTextField(props) {
   const classes = useStyles();
 
-  const handleChange = (event) => {
-    props.updateChange(event.target.value)
-  };
-
   return (
     <form className={classes.root} noValidate autoComplete="off">
       <div>
         <TextField
           id="gender"
+          name="gender"
           select
           label="Gender"
           value={props.gender}
-          onChange={handleChange}
+          onChange={props.updateChange}
           onKeyPress={ event => {
             if (event.key === 'Enter') {
               props.handleNext();

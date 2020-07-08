@@ -33,7 +33,7 @@ class FullTrail extends Component {
     loadData() {
         const fields = 'NCTId,OfficialTitle,Gender,MinimumAge,MaximumAge,OverallStatus,BriefSummary,Condition,LocationCountry,EnrollmentCount';
         if (this.props.match.params.id) {
-            if (!this.state.loadedTrail || String(this.state.loadedTrail.NCTId).localeCompare(this.props.match.params.id)){
+            if (!this.state.loadedTrail || this.state.loadedTrail.NCTId[0] !== this.props.match.params.id){
                 axios.get('https://clinicaltrials.gov/api/query/study_fields?expr=' + this.props.match.params.id + '&fields=' + fields + '&field=NCTId&fmt=JSON')
                     .then(response => {
                         this.setState({loadedTrail: response.data.StudyFieldsResponse.StudyFields[0]})

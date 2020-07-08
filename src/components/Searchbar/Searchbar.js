@@ -23,16 +23,16 @@ const useStyles = makeStyles((theme) => ({
 
 export default function CustomizedInputBase(props) {
   const classes = useStyles();
-  const handleChange = (event) => {
-    props.updateChange(event.target.value)
-  };
+  
   return (
     <Paper component="form" className={classes.root}>
       <InputBase
         className={classes.input}
+        name="searchExpression"
         placeholder="Search..."
+        value={props.searchExpression}
         inputProps={{ 'aria-label': 'search' }}
-        onChange = {handleChange}
+        onChange = {props.updateChange}
         onKeyPress={ event => {
           if (event.key === 'Enter') {
             props.handleFinish();
