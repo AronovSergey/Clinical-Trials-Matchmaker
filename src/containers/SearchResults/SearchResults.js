@@ -4,7 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import Result from './../../components/Result/Result';
 import classes from './SearchResults.css';
 
-import { updateSelectedNCTID } from './../../store/reducer'
+import { updateSelectedNCTID } from './../../store/Action'
 
 
 const SearchResults = ( props ) => {

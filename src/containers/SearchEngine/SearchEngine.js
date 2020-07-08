@@ -7,7 +7,8 @@ import RedditTextField from './../../components/RedditTextField/RedditTextField'
 import GenderSelecter from './../../components/GenderSelecterTextField/GenderSelecterTextField';
 import Searchbar from './../../components/Searchbar/Searchbar';
 
-import { updateSearchDetails, updateTrailsArr } from './../../store/reducer';
+
+import { updateSearchDetails, updateTrailsArr } from './../../store/Action';
 
 const SearchEngine = props => {
     const history = useHistory();
