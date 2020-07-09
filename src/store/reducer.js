@@ -12,9 +12,6 @@ const initialState = {
 	successRateArray: []
 }
 
-
-
-
 const reducer = (state = initialState, action) => {
 	switch( action.type ) {
 		case 'UPDATE_SEARCH_DETAILS':
@@ -34,6 +31,10 @@ const reducer = (state = initialState, action) => {
 			return {
 				...state,
 				trails: action.filteredData,
+			}
+		case 'UPDATE_SUCCESS_RATE_ITEM':
+			return{
+				...state,
 				successRateArray: [...state.successRateArray, action.successRateItem]
 			}
 		default:

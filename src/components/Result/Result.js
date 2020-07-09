@@ -17,6 +17,12 @@ const useStyles = makeStyles((theme) => ({
 export default function Result(props) {
   const classes = useStyles();
 
+  const getSuccesRate = () => {
+    const success_rate = props.success_rate;
+    if(success_rate) { return `Succes Rate: ${props.success_rate}`;}
+    return `Succes rate prediction works only on a local hosting`;
+  }
+
   return (
     <Card className={classes.root}>
       <CardActionArea>
@@ -25,7 +31,7 @@ export default function Result(props) {
             {props.title}
           </Typography>
           <Typography gutterBottom variant="h6" component="h4">
-            {`Succes Rate: ${props.success_rate}`}
+            {getSuccesRate()}
           </Typography>
           <Typography variant="body2" color="textSecondary" component="p">
             {props.summary}

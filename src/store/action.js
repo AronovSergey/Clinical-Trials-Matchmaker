@@ -41,6 +41,10 @@ export function updateTrailsArr(){
 						                trail.EnrollmentCount[0] !== undefined        
 						            );
 								});
+					dispatch({
+						type: "UPDATE_TRAILS_ARR",
+						filteredData: filteredData,
+					});
 
 					filteredData.forEach( trail => { 
 						const {LocationCountry, StudyFirstSubmitDate, EnrollmentCount} = trail
@@ -59,14 +63,23 @@ export function updateTrailsArr(){
 				                "EnrollmentCount": EnrollmentCount[0]
 				            }) 
 						})
-						.then(res => res.json())
+						.then(result => {
+							if (!result.ok) throw result;
+							return result.json();
+						})
 						.then(resData => {
+							if (resData.errors) {
+								console.log(resData.errors);
+							}
 							dispatch({
-								type: "UPDATE_TRAILS_ARR",
-								filteredData: filteredData,
+								type: "UPDATE_SUCCESS_RATE_ITEM",
 								successRateItem: resData.success_rate
 							})
 						})
+						.catch(error => {
+							console.error('There has been a problem with your fetch operation:');
+						  });
+						
 					});
 				})		
 	}
