@@ -5,7 +5,8 @@ Our website cleans and processes clinical trial data to make incredible products
 ### React Components Relation Diagram
 ![Untitled Diagram](https://i.ibb.co/bFYS1T9/Untitled-Diagram.png)
 ## Deployed App
-Please visit the next link in order to see the app in production deployed over `firebase` : https://ct-matchmaker.com/
+Please visit the next link in order to see the app in production deployed over `firebase` : 
+https://ct-matchmaker.com/
 ## Technology Wise
 These next technologies are the ones used in this project:
 * React.js
