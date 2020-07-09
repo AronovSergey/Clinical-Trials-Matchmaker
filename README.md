@@ -3,7 +3,7 @@
 > Clinical Trials Matchmaker is a website where patients can find the best clinical trial for themselves. 
 Our website cleans and processes clinical trial data to make incredible products for our clients.
 ### React Components Relation Diagram
-![Untitled Diagram](https://ibb.co/kJzRKjC)
+![Untitled Diagram](https://i.ibb.co/bFYS1T9/Untitled-Diagram.png)
 ## Deployed App
 Please visit the next link in order to see the app in production deployed over `firebase` : https://ct-matchmaker.com/
 ## Technology Wise
