@@ -6,7 +6,7 @@ const AboutUsPage = () => {
     return (
         <div>       
             <TeamMember
-                img = {"https://i.ibb.co/qF9TVz9/karin.jpg"}
+                img = {"https://i.ibb.co/ggfTJc3/karin.jpg"}
                 name = {"Karin Gluzman"}
                 description = {"Results-oriented customer success manager in the tech industry who specializes in quality customer success, customer support, customer retention, productivity, and team management. Highly experienced in software-as-a-service customer success and dedicated to providing excellent customer service and making operational and procedural improvements. Offer excellent communication, interpersonal skills, and problem-solving skills."}
                 linkedinURL = {"https://www.linkedin.com/in/karin-gluzman/"}

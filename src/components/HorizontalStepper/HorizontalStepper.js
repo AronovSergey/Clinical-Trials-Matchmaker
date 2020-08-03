@@ -84,7 +84,9 @@ export default function HorizontalStepper(props) {
           <Button 
             variant="contained" 
             color="primary" 
-            onClick={props.step === steps.length - 1 ? props.handleFinish : props.handleNext }>
+            onClick={props.step === steps.length - 1 ? props.handleFinish : props.handleNext }
+            disabled={props.isEmpty()}
+            >
                {props.step === steps.length - 1 ? 'Finish' : 'Next'}
           </Button>
         </Grid>

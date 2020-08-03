@@ -29,6 +29,7 @@ export default function CustomizedInputBase(props) {
       <InputBase
         className={classes.input}
         name="searchExpression"
+        error={props.error}
         placeholder="Search..."
         value={props.searchExpression}
         inputProps={{ 'aria-label': 'search' }}

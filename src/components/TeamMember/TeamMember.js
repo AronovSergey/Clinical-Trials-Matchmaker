@@ -18,6 +18,7 @@ const useStyles = makeStyles((theme) => ({
     },
     root: {
         display: 'flex',
+        float: "left",
         marginBottom: theme.spacing(5),
     },
   }));

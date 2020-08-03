@@ -10,7 +10,6 @@ import TextField from '@material-ui/core/TextField';
 import DialogContentText from '@material-ui/core/DialogContentText';
 
 
-
 const RegistrationPopUp = (props) => {
     const [step, setStep] = useState(0);
     const [mail, setMail] = useState('');
@@ -19,6 +18,12 @@ const RegistrationPopUp = (props) => {
 
     const handleChange = (event) => {
       setMail(event.target.value);
+    };
+
+    const validateEmail = (email) => {
+        var re = /\S+@\S+\.\S+/;
+        if(step === 1 && !re.test(email)){ return true; }
+        return false;
     };
 
     function getTitle(stepIndex) {
@@ -76,7 +81,7 @@ const RegistrationPopUp = (props) => {
         		  </DialogContentText>
                   <div>
                     {step?
-                        <TextField
+                      <TextField
                         autoFocus
                         margin="dense"
                         id="name"
@@ -101,6 +106,7 @@ const RegistrationPopUp = (props) => {
         		  <Button 
                     variant="outlined" 
                     color="primary"
+                    disabled={validateEmail(mail)}
                     onClick={() => step === 0 ? setStep(step + 1) : handleSubmit()}>
         		    {step === 0 ? 'Agree' : 'Subscribe'}
         		  </Button>
